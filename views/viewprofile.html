@@ -1,0 +1,36 @@
+<html>
+<head><title>profile</title>
+</head>
+<body>
+
+<div class="bs-example">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse"
+                 data-parent="#accordion" style="cursor:pointer" data-target="#collapseOne">
+                    Your Profile
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="formsize">
+                            <div class="span12" style="text-align:center; margin: 0 auto;">
+                                <h3>{{message}}</h3>
+                                <form class="form-horizontal forms" name="profileforms" ng-submit="profile(user)" novalidate>
+                                 <table class="center">
+                                   <tr><td>Name:</td><td><input type="text" name="name"></td><tr>                                   
+                                 </table>
+
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br/>
+
+    </div>
+</div>
+</body>
+
+</html>

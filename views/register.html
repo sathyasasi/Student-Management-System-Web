@@ -1,0 +1,102 @@
+<div>
+<h3><center>SMS Register Form</center></h3>
+<!--  <h5 style="text-align: center">{{message}}</h5>-->
+<form name="form" class="myForm" ng-submit="register(user);"  required>
+  <fieldset>
+<div class="container">
+    <div class="row">
+        <div class="form-group" style="text-align:cent">
+
+            <div class="form-group">
+
+                <label >Name:</label><br>
+
+       <input class="control-boxs" name="username" ng-model="user.Name"  placeholder="Enter your Name" type="text"
+               maxlength="30" minlength="3"   ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required/>
+
+    </div>
+    <span style="color:blue" class="error" ng-show="form.username.$error.minlength">Given Name should be above 3 letters.</span><br/>
+    <div class="form-group">
+        <label >Id:</label><br>
+    <input class="control-boxs"  name="id" ng-model="user.id"  placeholder="Enter your ID" type="text" maxlength="30"
+    ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required/>
+    </div>
+    <span style="color:blue"  ng-style="{'padding-top':'2px'}" ng-show="form.Id.$error.pattern">Please enter correct ID</span><br/>
+    <div class="form-group">
+      <label for="email">Email:</label><br>
+        <input class="control-boxs"  name="email" ng-model="user.email"  placeholder="Enter Your Email-id" type="text"
+               ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/|(\d+$)$/" required/>
+    </div>
+    <span style="color:blue" ng-style="{'padding-top':'2px'}" ng-show="form.email.$error.pattern">Please enter correct mail id</span><br/>
+
+    <div class="form-group">
+        <label for="phonenum">phone:</label><br>
+         <input class="control-boxs" name="phonenum"   ng-model="user.phone" placeholder="1234567890" type="text"
+               ng-pattern="/^[0-9-]*$/" maxlength="10" minlength="10" required/>
+    </div>
+    <span style="color:blue"  ng-style="{'padding-top':'2px'}" ng-show="form.phonenum.$error.pattern">Please enter numbers only.</span>
+    <span style="color:blue" class="error" ng-show="form.phonenum.$error.minlength">Phone number must be 10 digits .</span><br/>
+
+    <div class="form-group">
+        <label for="password">Password:</label><br>
+       <input class="control-boxs"  name="password" id="password" ng-model="user.password" placeholder="Enter Your Password" type="password"
+               ng-pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/"
+               required/>
+    </div>
+    <span style="color:blue"  ng-show="form.password.$error.pattern">Please give One Special Character and Number</span><br/>
+
+    <div class="form-group">
+        <label for="cpassword">ConformPassword:</label><br>
+      <input class="control-boxs"  name="cpassword" ng-model="cpass" placeholder="Enter Your Conform Password" type="password"
+                required />
+    </div>
+
+    <div class="form-group">
+
+        <span style="color:blue" ng-style="{'padding-top':'2px'}" ng-show="user.password !== cpass">Password is not match</span>
+    </div>
+
+    <br/>
+    <div class="form-group">
+        <label for="dob">Dob:</label><br>
+      <input class="control-boxs"  name="dob" ng-model="user.dob" placeholder="Enter Your dob" type="date"
+                required />
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-labels">Dept:</label><br>
+        <select class="control-boxs" name="selection" ng-model="user.dept" required
+                ng-options="c.code as c.name for c in processes" >
+            <option disabled value="" disabled selected>-- Select a Catagory --</option>
+            <option value="it">IT</option>
+<option value="csc">CSC</option>
+<option value="civil">CILVIL</option>
+<option value="eee">EEE</option>
+<option value="mech">MECH</option>
+        </select>
+    </div>
+
+      <label class="control-labels">Catagory:</label><br>
+            <select class="control-boxs" name="selection" ng-model="user.catagory" required
+                    ng-options="c.code as c.name for c in processes" >
+                <option disabled value="" disabled selected>-- Select a Catagory --</option>
+                <option value="staff">Staff</option>
+  <option value="student">Student</option>
+            </select>
+        </div><br/>
+
+    <div class="form-group">
+
+        <input class  ="form-button" type="submit" value="Register" ng-click="register()" >
+
+        <input class="form-button" type="reset" value="Reset"
+               ng-click="reset()">
+
+    </div>
+
+</div>
+</div>
+</fieldset>
+</form>
+</div>

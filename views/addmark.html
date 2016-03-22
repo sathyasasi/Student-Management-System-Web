@@ -1,0 +1,102 @@
+<div class="bs-example">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse"
+                 data-parent="#accordion" style="cursor:pointer" data-target="#collapseOne">
+                    Add Mark <!--"/^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/(199\d|[2-9]\d{3})$/" /> date-->
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="formsize">
+                            <div class="span12" style="text-align:center; margin: 0 auto;">
+                                <form name="myForm">
+          <table>
+
+              <tr>
+                  <td>
+                      studentId</td>
+                  <td>
+                      <input type="text" ng-model="studentId"/ required></td>
+              </tr>
+              <tr>
+                  <td>
+                      deptId</td>
+                  <td>
+                      <input type="text" ng-model="deptId" required /></td>
+              </tr>
+              <tr>
+                  <td>
+                      semName</td>
+                  <td>
+                    <select class="control-boxs" id="semName" name="semName"  ng-model="semName" >
+                        <option disabled value="" disabled selected>-- Select a Catagory --</option>
+                        <option value="sem1">SEM1</option>
+                        <option value="sem2">SEM2</option>
+                        <option value="sem3">SEM3</option>
+                        <option value="sem4">SEM4</option>
+                        <option value="sem5">SEM5</option>
+                        <option value="sem6">SEM6</option>
+                        <option value="sem7">SEM7</option>
+                        <option value="sem8">SEM8</option>
+                    </select></td>
+              </tr>
+              <tr>
+                  <td>
+                      semType</td>
+                  <td>
+                    <select class="control-boxs" name="semType" ng-model="semType" >
+                        <option disabled value="" disabled selected>-- Select a Catagory --</option>
+                        <option value="odd">ODD</option>
+                        <option value="even">even</option>
+                    </select></td>
+              </tr>
+              <tr>
+                  <td>
+                      subName</td>
+                      <td>
+                             <input type="text" ng-model="subName"/ required></td>
+              </tr>
+
+
+                      <tr>
+                          <td>
+                              subMark</td>
+                          <td>
+                              <input type="text" ng-model="subMark" /></td>
+                      </tr>
+                      <tr>
+                          <td>
+                              attendance</td>
+                          <td>
+                              <input type="text" ng-model="attendance" /></td>
+                      </tr>
+                      <tr>
+                          <td>
+                              result</td>
+                          <td>
+                              <input type="text" ng-model="result" /></td>
+                      </tr>
+                      <tr>
+                          <td>
+                              percentage</td>
+                          <td>
+                              <input type="text" ng-model="percentage" /></td>
+                      </tr>
+                  <td>
+                      <input type="submit" value="Save" ng-click="add()"/>
+                      <input type="submit" value="Update" ng-click="save()"/>
+                      <input type="reset" value="Clear" ng-click="clear()"/>
+                  </td>
+              </tr>
+          </table>
+      </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br/>
+
+    </div>
+</div>

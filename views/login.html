@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="span12" style="text-align:center; margin: 0 auto;">
+            <form class="form-horizontal" ng-submit="login(user,type)" name="form">
+                <div class="control-group">
+                    <label class="control-label" >SMS</label><br/><br/>
+                    <h4 style="color:red">{{message}}</h4>
+                    <div class="controls">
+                        <input  class="control-box" name="emailorphone"
+                                placeholder="Phone Number" type="text" name="emailorphone" ng-model="user.phone"
+                                ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/|(\d+$)$/" required>
+                    </div>
+                </div>
+                <span style="font-size:14px;color:red" class="help-inline" ng-show="form.emailorphone.$error.pattern">Invalid Email or phone number</span>
+                <span style="font-size:14px;color:red" class="help-inline" ng-show="submitted && form.emailorphone.$error.required">Please enter your email or phone number</span><br/>
+                <div class="control-group">
+                    <div class="controls">
+                        <input class="control-box" name="password"
+                               placeholder="Enter your password..." type="password" name="password" ng-minlength="8"
+                               ng-pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/" ng-model="user.password" required>
+                    </div>
+                </div>
+                <span style="font-size:14px;color:red" class="help-inline" ng-show="form.password.$error.pattern">Password atleast 1 specialcharacter and number </span>
+                <span style="font-size:14px;color:red" class="help-inline" ng-show="submitted && form.password.$error.required">Please enter your password</span><br/>
+                <div class="control-group">
+                    <div class="controls">
+                        <select class="selectpicker" name="process" ng-model="type" required
+                                ng-options="c.code as c.name for c in processes" >
+                            <option value="">-- Select a catagory --</option>
+                        </select>
+                    </div>
+                </div>
+                <span style="font-size:14px;color:red" class="help-inline" ng-show="submitted && form.process.$error.required">Please Select Your options</span><br/>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" ng-click="submitted=true" class="btn btn-primary bttn">SignIn</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

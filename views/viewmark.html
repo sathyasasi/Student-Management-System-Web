@@ -1,0 +1,93 @@
+
+  <div class="bs-example">
+      <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+              <div class="panel-heading" data-toggle="collapse"
+                   data-parent="#accordion" style="cursor:pointer" data-target="#collapseOne">
+                      View Mark <!--"/^(0?[1-9]|1[012])\/(0?[1-9]|[12][0-9]|3[01])\/(199\d|[2-9]\d{3})$/" /> date-->
+              </div>
+
+                                  <form name="myForm">
+                                    <div class="form-group">
+
+                                        <label >Enter studentId:</label>
+
+                               <input class="control-boxs" name="studentId" ng-model="user.studentId"  placeholder="Enter your studentId" type="text"
+                                   required/>
+
+
+
+                                <label >Enter deptId:</label>
+
+                       <input class="control-boxs" name="studentId" ng-model="user.deptId"  placeholder="Enter your deptId" type="text"
+                           required/>
+
+                    </div><br>
+                    <div class="form-gruop">
+                      <label>select semName:</label>
+
+                        <select class="control-boxs" name="selection" ng-model="user.semname" >
+                            <option disabled value="" disabled selected>-- Select a Catagory --</option>
+                            <option value="sem1">SEM1</option>
+                            <option value="sem2">SEM2</option>
+                            <option value="sem3">SEM3</option>
+                            <option value="sem4">SEM4</option>
+                            <option value="sem5">SEM5</option>
+                            <option value="sem6">SEM6</option>
+                            <option value="sem7">SEM7</option>
+                            <option value="sem8">SEM8</option>
+                        </select>
+                     <label>select semType:</label>
+                     <select class="control-boxs" name="selection">
+                       <option disabled value="" disabled selected>--Select a Catagory --</option>
+                       <option value="odd">ODD</option>
+                       <option value="even">EVEN</option>
+                     </select>
+                      <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click=viewmark()>Submit</button>
+
+                    </div>
+                    <div>
+            <table >
+
+                 <th><h3>View Student Mark details</h3> </th>
+                   <tr>
+                                <td>
+                                      subName</td>
+                                <td>
+                                      <input type="text" data-ng-model="semester.subName" /></td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                subMark</td>
+                            <td>
+                                <input type="text" data-ng-model="semester.subMark" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                attendance</td>
+                            <td>
+                                <input type="text" data-ng-model="semester.attendance" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                result</td>
+                            <td>
+                                <input type="text" data-ng-model="semester.result" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                percentage</td>
+                            <td>
+                                <input type="text" data-ng-model="semester.percentage" /></td>
+                        </tr>
+
+                </tr>
+            </table>
+          </div>
+        </form>
+              </div><br/>
+
+      </div>
+  </div>

@@ -1,0 +1,111 @@
+<html>
+<head><title>profile</title>
+</head>
+<body>
+
+<div class="bs-example">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse"
+                 data-parent="#accordion" style="cursor:pointer" data-target="#collapseOne">
+                    Your Profile
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="formsize">
+                            <div class="span12" style="text-align:center; margin: 0 auto;">
+                                <h3>{{message}}</h3>
+                                <form class="form-horizontal forms" name="profileforms" ng-submit="profile(user)" novalidate>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <label class="control-labels" >User Name</label><br/>
+                                            <input ng-disabled="false" class="control-boxs"
+                                                    placeholder="User Name" type="username" name="username" ng-model="user.name" minlength="3"
+                                                    ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/|(\d+$)$/" required>
+                                        </div>
+                                    </div>
+                                    <span style="color:red"  class="help-inline" ng-show="profileforms.user.name.$error.minlength">Given Name should be above 3 letters.</span>
+                                    <span  style="color:red"  class="help-inline"  ng-show="submitted && profileforms.username.$error.required">Please enter your name</span><br/>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <label class="control-labels" >Phone Number</label><br/>
+                                            <input  ng-disabled="false" class="control-boxs"
+                                                   placeholder="Phone Number" type="phone" name="phone"
+                                                   ng-pattern="/^[0-9-]*$/"  maxlength="10" minlength="10" ng-model="user.phone" required>
+                                        </div>
+                                    </div>
+                                    <span  style="color:red"  class="help-inline"  ng-show="profileforms.user.phone.$error.pattern">Please enter numbers only.</span>
+                                    <span  style="color:red"  class="help-inline"  ng-show="submitted && profileforms.phone.$error.required">Please enter Your phone number </span>
+                                    <span  style="color:red"  class="help-inline"  ng-show="profileforms.phone.$error.minlength">Phone number must be 10 digits .</span><br/>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <label class="control-labels" >Email</label><br/>
+                                            <input  ng-disabled="false" class="control-boxs"
+                                                   placeholder="Email" type="emailid" name="email"
+                                                   ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="user.email" required>
+
+                                        </div>
+                                    </div>
+                                    <span style="color:red"  class="help-inline"  ng-show="profileforms.user.email.$error.pattern">Please enter correct mail id</span>
+                                    <span style="color:red"class="help-inline" ng-show="submitted && profileforms.emailid.$error.required">Please enter your email or phone number</span>
+                                    <br/>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <label class="control-labels" >Street Name</label><br/>
+                                            <input class="control-boxs"
+                                                   placeholder="Street Name" type="street" name="street"
+                                                    ng-model="user.address.street" required>
+
+                                        </div>
+                                    </div>
+
+                                    <br/>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <label class="control-labels" >City Name</label><br/>
+                                            <input class="control-boxs"
+                                                   placeholder="City Name" type="city" name="city"
+                                                   ng-model="user.address.city" required>
+
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <label class="control-labels" >State Name</label><br/>
+                                            <input class="control-boxs"
+                                                   placeholder="State Name" type="state" name="state"
+                                                   ng-model="user.address.state" required>
+
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <label class="control-labels" >Pin Code</label><br/>
+                                            <input class="control-boxs"  minlength="6"
+                                                   placeholder="Pin Code" type="pincode" name="pincode"
+                                                   ng-pattern="/^[0-9-]*$/" ng-model="user.address.pincode" minlength="6" maxlength="6" required>
+
+                                        </div>
+                                    </div>
+                                    <br/>
+
+                                  
+                                   <div class="control-group">
+                                        <div class="controls">
+                                            <button type="submit" class="btn btn-primary bttns">Save Profile</button>
+                                            <button type="submit" class="btn btn-primary bttns">Edit profile</button>                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br/>
+
+    </div>
+</div>
+</body>
+
+</html>
